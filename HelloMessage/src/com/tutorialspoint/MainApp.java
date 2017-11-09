@@ -11,7 +11,7 @@ public class MainApp {
       obj.setMessage("First ");
       obj.setTestValue("Test Value");
       obj.getMessage();   
-      
+      //test comment
       HelloMessage obj2 = (HelloMessage) context.getBean("HelloMessage");
       obj2.getMessage();
       ((ClassPathXmlApplicationContext)context).close();
