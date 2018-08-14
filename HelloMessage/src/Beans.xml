@@ -1,13 +1,46 @@
 <?xml version = "1.0" encoding = "UTF-8"?>
 
-<beans xmlns = "http://www.springframework.org/schema/beans"
-   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation = "http://www.springframework.org/schema/beans
-   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+	default-init-method="initializeBean" default-destroy-method="destroyBean">
 
-   <bean id = "HelloMessage" class = "com.tutorialspoint.HelloMessage" scope="prototype">
-      <property name = "message" value = "Hello World!"/>
-      <property name = "testValue" value = "Test Message!"/>
-   </bean>
+	<bean id="HelloMessage" class="com.tutorialspoint.HelloMessage"
+		lazy-init="true" scope="singleton" init-method="initializeBean1"
+		destroy-method="destroyBean1">
+		<property name="message" value="Hello World!" />
+		<property name="testValue" value="Test Message!" />
+	</bean>
+	<bean id="HelloWorld" class="com.tutorialspoint.HelloWorld"
+		abstract="true" lazy-init="true" >
+		<property name="message" value="Hello World Abstract test!" />
+	</bean>
 
+	<bean class="com.tutorialspoint.InitHelloMessage" />
+	<bean id="HelloMessageChild" class="com.tutorialspoint.HelloMessage"
+		scope="singleton" init-method="initializeBean1" destroy-method="destroyBean1"
+		parent="HelloWorld" lazy-init="true" >
+		<property name="testValue" value="Child Bean!" />
+	</bean>
+	<!-- 
+		<bean id = "customEventHandler" class = "com.tutorialspoint.CustomEventHandler"/> 
+		<bean id = "customEventPublisher" class = "com.tutorialspoint.CustomEventPublisher"/> 
+		-->
+	<bean id="PrintCustomers" class="com.tutorialspoint.PrintCustomers">
+		<constructor-arg name="customer">
+			<bean id="customer" class="com.tutorialspoint.Customer">
+				<constructor-arg name="id" value="1001" />
+				<property name="Name" value="Test Customer" />
+				<property name="SelectedProductList">
+					<list>
+						<value>Product 1</value>
+						<value>Product 2</value>
+						<value>Product 3</value>
+						<value>Product 4</value>
+					</list>
+				</property>
+			</bean>
+		</constructor-arg>
+	</bean>
 </beans>

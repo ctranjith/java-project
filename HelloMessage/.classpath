@@ -6,7 +6,7 @@
 	<classpathentry kind="lib" path="C:/Study/Logging/commons-logging-api-1.1.1.jar/commons-logging-api-1.1.1.jar"/>
 	<classpathentry kind="lib" path="C:/Study/Spring/libs/spring-aop-5.0.1.RELEASE.jar"/>
 	<classpathentry kind="lib" path="C:/Study/Spring/libs/spring-aspects-5.0.1.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Study/Spring/libs/spring-beans-5.0.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Study/Spring/libs/spring-beans-5.0.1.RELEASE.jar" sourcepath=""/>
 	<classpathentry kind="lib" path="C:/Study/Spring/libs/spring-context-5.0.1.RELEASE.jar"/>
 	<classpathentry kind="lib" path="C:/Study/Spring/libs/spring-context-indexer-5.0.1.RELEASE.jar"/>
 	<classpathentry kind="lib" path="C:/Study/Spring/libs/spring-context-support-5.0.1.RELEASE.jar"/>

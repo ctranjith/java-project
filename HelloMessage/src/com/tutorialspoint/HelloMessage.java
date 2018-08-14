@@ -1,6 +1,9 @@
 package com.tutorialspoint;
 
-public class HelloMessage {
+//import org.springframework.beans.factory.config.BeanPostProcessor;
+
+public class HelloMessage //implements BeanPostProcessor 
+{
 	private String message;
 	private String testValue;
 
@@ -15,4 +18,21 @@ public class HelloMessage {
 	public void setMessage(String message) {
 		this.message = message;
 	}
+
+	public void initializeBean1() {
+		System.out.println("Hello Bean Initialize Bean");
+	}
+
+	public void destroyBean1() {
+		System.out.println("Hello Bean Destroyed");
+	}
+
+	public void initializeBean() {
+		System.out.println("Inside Initialize Bean");
+	}
+
+	public void destroyBean() {
+		System.out.println("Bean Destroyed");
+	}
+
 }
